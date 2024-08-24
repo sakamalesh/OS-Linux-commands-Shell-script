@@ -1,155 +1,153 @@
-OS-Linux-commands-Shell-scripting
-Operating systems Lab exercise
 
-Linux commands-Shell scripting
-Linux commands-Shell scripting
 
 AIM:
 To practice Linux Commands and Shell Scripting
 
 DESIGN STEPS:
-Step 1:
-Navigate to any Linux environment installed on the system or installed inside a virtual environment like virtual box/vmware or online linux JSLinux (https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192) or docker.
-
-Step 2:
-Execute the following commands
-
-Step 3:
-Testing the commands for the desired output.
-
-COMMANDS:
-Create the following files file1, file2 as follows:
-cat > file1
-
-chanchal singhvi
-c.k. shukla
-s.n. dasgupta
-sumit chakrobarty
-^d
-cat > file2
-
-anil aggarwal
-barun sengupta
-c.k. shukla
-lalit chowdury
-s.n. dasgupta
-^d
-Display the content of the files
-cat < file1
-
-OUTPUT
-chanchal singhvi
-c.k. shukla
-s.n. dasgupta
-sumit chakrobarty
-^dchanchal singhvi
-c.k. shukla
-s.n. dasgupta
-sumit chakrobarty
-cat < file2
-
-OUTPUT
-anil aggarwal
-barun sengupta
-c.k. shukla
-lalit chowdury
-s.n. dasgupta
-Comparing Files
-cmp file1 file2
-
-OUTPUT
-file1 file2 differ: char 1, line 1
-comm file1 file2
-OUTPUT
-anil aggarwal
- barun sengupta
- c.k. shukla
-chanchal singhvi
-c.k. shukla
- lalit chowdury
-   s.n. dasgupta
-sumit chakrobarty
-chanchal singhvi
-c.k. shukla
-s.n. dasgupta
-sumit chakrobarty
-OUTPUT
---- file1
-+++ file2
-@@ -1,10 +1,6 @@
--
--chanchal singhvi
-+anil aggarwal
-+barun sengupta
- c.k. shukla
-+lalit chowdury
- s.n. dasgupta
--sumit chakrobarty
--^dchanchal singhvi
--c.k. shukla
--s.n. dasgupta
--sumit chakrobarty
-#Filters
-
-Create the following files file11, file22 as follows:
-cat > file11
-
-Hello world
-This is my world
-^d
-cat > file22
-
-1001 | Ram | 10000 | HR
-1002 | tom |  5000 | Admin
-1003 | Joe |  7000 | Developer
-^d
-cut -c1-3 file11
-
-OUTPUT
-Hel
-Thi
-cut -d "|" -f 1 file22
-
-OUTPUT
-1001
-1002
-1003
-cut -d "|" -f 2 file22
-
-OUTPUT
-Ram
- tom
- Joe
-cat > newfile
-
-Hello world
-hello world
-^d
-cat > newfile Hello world hello world
-
-grep Hello newfile
-
-OUTPUT
-Hello world
-grep hello newfile
-
-OUTPUT
-hello world
-grep -v hello newfile
-
-OUTPUT
-Hello world
-cat newfile | grep -i "hello"
-
-OUTPUT
-Hello world
-hello world
-cat newfile | grep -i -c "hello"
-
-OUTPUT
-2
-grep -R ubuntu /etc
-
+'''
+	Step 1:
+	Navigate to any Linux environment installed on the system or installed inside a virtual environment like virtual box/vmware or online linux JSLinux (https://bellard.org/jslinux/vm.html?url=alpine- 
+         x86.cfg&mem=192) or docker.
+	
+	Step 2:
+	Execute the following commands
+	
+	Step 3:
+	Testing the commands for the desired output.
+	
+	COMMANDS:
+	Create the following files file1, file2 as follows:
+	cat > file1
+	
+	chanchal singhvi
+	c.k. shukla
+	s.n. dasgupta
+	sumit chakrobarty
+	^d
+	cat > file2
+	
+	anil aggarwal
+	barun sengupta
+	c.k. shukla
+	lalit chowdury
+	s.n. dasgupta
+	^d
+	Display the content of the files
+	cat < file1
+	
+	OUTPUT
+	chanchal singhvi
+	c.k. shukla
+	s.n. dasgupta
+	sumit chakrobarty
+	^dchanchal singhvi
+	c.k. shukla
+	s.n. dasgupta
+	sumit chakrobarty
+	cat < file2
+	
+	OUTPUT
+	anil aggarwal
+	barun sengupta
+	c.k. shukla
+	lalit chowdury
+	s.n. dasgupta
+	Comparing Files
+	cmp file1 file2
+	
+	OUTPUT
+	file1 file2 differ: char 1, line 1
+	comm file1 file2
+	OUTPUT
+	anil aggarwal
+	 barun sengupta
+	 c.k. shukla
+	chanchal singhvi
+	c.k. shukla
+	 lalit chowdury
+	   s.n. dasgupta
+	sumit chakrobarty
+	chanchal singhvi
+	c.k. shukla
+	s.n. dasgupta
+	sumit chakrobarty
+	OUTPUT
+	--- file1
+	+++ file2
+	@@ -1,10 +1,6 @@
+	-
+	-chanchal singhvi
+	+anil aggarwal
+	+barun sengupta
+	 c.k. shukla
+	+lalit chowdury
+	 s.n. dasgupta
+	-sumit chakrobarty
+	-^dchanchal singhvi
+	-c.k. shukla
+	-s.n. dasgupta
+	-sumit chakrobarty
+	#Filters
+	
+	Create the following files file11, file22 as follows:
+	cat > file11
+	
+	Hello world
+	This is my world
+	^d
+	cat > file22
+	
+	1001 | Ram | 10000 | HR
+	1002 | tom |  5000 | Admin
+	1003 | Joe |  7000 | Developer
+	^d
+	cut -c1-3 file11
+	
+	OUTPUT
+	Hel
+	Thi
+	cut -d "|" -f 1 file22
+	
+	OUTPUT
+	1001
+	1002
+	1003
+	cut -d "|" -f 2 file22
+	
+	OUTPUT
+	Ram
+	 tom
+	 Joe
+	cat > newfile
+	
+	Hello world
+	hello world
+	^d
+	cat > newfile Hello world hello world
+	
+	grep Hello newfile
+	
+	OUTPUT
+	Hello world
+	grep hello newfile
+	
+	OUTPUT
+	hello world
+	grep -v hello newfile
+	
+	OUTPUT
+	Hello world
+	cat newfile | grep -i "hello"
+	
+	OUTPUT
+	Hello world
+	hello world
+	cat newfile | grep -i -c "hello"
+	
+	OUTPUT
+	2
+	grep -R ubuntu /etc
+'''
 OUTPUT
 Search for PATTERN in FILEs (or stdin)
  
