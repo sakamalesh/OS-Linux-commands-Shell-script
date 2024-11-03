@@ -1,4 +1,6 @@
-
+## OS-Linux-commands-Shell-script
+## Name: Kamalesh
+## Reg No: 212223040083
 
 ## AIM:
 To practice Linux Commands and Shell Scripting
